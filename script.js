@@ -1,8 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('registration-form');
-    const feedbackDiv = document.getElementById('form-feedback');
-
-    form.addEventListener('submit', (event) => {
+function validateForm(event) {
         // Prevent form submission
         event.preventDefault();
 
@@ -48,5 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackDiv.style.backgroundColor = '#f8d7da';
             feedbackDiv.style.border = '1px solid #f5c6cb';
         }
-    });
+    }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registration-form');
+    const feedbackDiv = document.getElementById('form-feedback');
+    
+    form.addEventListener('submit', validateForm);
 });
